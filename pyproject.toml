@@ -6,9 +6,31 @@ authors = ["Your Name <you@example.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.11"
+fastmcp = "^2.11.2"
 
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4.1"
+pytest-asyncio = "0.23.5"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+# Add PEP 621 metadata for uv/fastmcp compatibility
+[project]
+name = "perception-mcp"
+version = "0.1.0"
+description = "Lightweight Model Context Protocol server for multimodal Q&A"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastmcp>=2.11.2",
+]
+[project.optional-dependencies]
+# Match dev group from Poetry
+dev = [
+    "pytest>=8.4",
+    "pytest-asyncio>=0.23",
+]

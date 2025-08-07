@@ -34,3 +34,19 @@ Add Perception-MCP to Claude Desktop (v0.3.7+) by adding the following to your `
   }
 }
 ```
+
+## Development
+
+### Running the test suite
+
+The project uses `pytest` with `pytest-asyncio` to handle FastMCP’s async helpers.
+
+```bash
+# Install runtime + dev dependencies
+$ poetry install --with dev --no-root
+
+# Run the tests
+$ poetry run pytest -q
+```
+
+All tests should pass, verifying that the server registers its tools and that the current stubs raise `NotImplementedError` until implemented.
