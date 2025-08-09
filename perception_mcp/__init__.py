@@ -1,5 +1,7 @@
 from fastmcp import FastMCP
 
+from perception_mcp.analysis import query
+
 mcp = FastMCP("Perception-MCP")
 
 
@@ -8,16 +10,14 @@ async def query_image(path: str, question: str) -> str:
     """Answer a question about an image.
 
     Args:
-        path: A local file path or URL pointing to an image.
+        path: Absolute local file path or URL pointing to an image.
         question: The question to ask about the contents of the image.
 
     Returns:
         The answer to the question.
-
-    Note:
-        The implementation will be added in a future commit.
     """
-    raise NotImplementedError("query_image tool not implemented yet.")
+    analysis = await query(path, question)
+    return analysis.answer
 
 
 @mcp.tool
@@ -25,16 +25,15 @@ async def query_audio(path: str, question: str) -> str:
     """Answer a question about an audio clip.
 
     Args:
-        path: A local file path or URL pointing to an audio file.
+        path: Absolute local file path or URL pointing to an audio file.
         question: The question to ask about the contents of the audio.
 
     Returns:
         The answer to the question.
 
-    Note:
-        The implementation will be added in a future commit.
     """
-    raise NotImplementedError("query_audio tool not implemented yet.")
+    analysis = await query(path, question)
+    return analysis.answer
 
 
 @mcp.tool
@@ -42,16 +41,14 @@ async def query_video(path: str, question: str) -> str:
     """Answer a question about a video.
 
     Args:
-        path: A local file path or URL pointing to a video.
+        path: Absolute local file path or URL pointing to a video.
         question: The question to ask about the contents of the video.
 
     Returns:
         The answer to the question.
-
-    Note:
-        The implementation will be added in a future commit.
     """
-    raise NotImplementedError("query_video tool not implemented yet.")
+    analysis = await query(path, question)
+    return analysis.answer
 
 
 def serve() -> FastMCP:

@@ -1,0 +1,35 @@
+execution_engine: asyncio
+logger:
+  transports: [console, file]
+  level: debug
+  path: "logs/mcp-agent.jsonl"
+
+mcp:
+  servers:
+    fal-ai:
+      command: uv
+      args:
+        - run
+        - --with
+        - aiofiles
+        - --with
+        - fastmcp
+        - --with
+        - httpx
+        - --with
+        - fastmcp
+        - /Users/caleb/Projects/Code/lintyourcode/mcp-fal/main.py
+    perplexity-mcp:
+      command: uvx
+      args:
+        - perplexity-mcp
+      env:
+        PERPLEXITY_MODEL: sonar
+    desktop-commander:
+      command: npx
+      args:
+        - -y
+        - "@wonderwhy-er/desktop-commander@latest"
+
+anthropic:
+  model: gpt-4o

@@ -23,5 +23,5 @@ async def test_tools_registered():
 )
 @pytest.mark.asyncio
 async def test_tool_stubs_raise_not_implemented(stub_fn):
-    with pytest.raises(NotImplementedError):
-        await stub_fn.fn("/dev/null", "dummy question") 
+    result = await stub_fn.fn("/dev/null", "This is a test. Only respond with 'success'")
+    assert "success" in result.lower()

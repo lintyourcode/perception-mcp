@@ -5,7 +5,10 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
+    "anthropic>=0.61.0",
     "fastmcp>=2.11.2",
+    "httplib2>=0.22.0",
+    "mcp-agent>=0.1.8",
 ]
 
 [dependency-groups]
