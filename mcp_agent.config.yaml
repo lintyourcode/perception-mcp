@@ -18,7 +18,7 @@ mcp:
         - httpx
         - --with
         - fastmcp
-        - /Users/caleb/Projects/Code/lintyourcode/mcp-fal/main.py
+        - mcp-fal/main.py
     perplexity-mcp:
       command: uvx
       args:

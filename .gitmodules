@@ -1,0 +1,4 @@
+[submodule "mcp-fal"]
+	path = mcp-fal
+	url = https://github.com/lintyourcode/mcp-fal
+	branch = temp
