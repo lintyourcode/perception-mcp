@@ -43,16 +43,8 @@ Perception-MCP provides the following tools:
 
 ## Development
 
-### Running the test suite
-
-The project uses `pytest` with `pytest-asyncio` to handle FastMCP’s async helpers.
+### Running tests
 
 ```bash
-# Install runtime + dev dependencies
-$ poetry install --with dev --no-root
-
-# Run the tests
-$ poetry run pytest -q
+uv run pytest -q
 ```
-
-All tests should pass, verifying that the server registers its tools and that the current stubs raise `NotImplementedError` until implemented.
