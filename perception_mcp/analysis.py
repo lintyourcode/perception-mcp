@@ -66,6 +66,8 @@ async def query(path: str, question: str) -> Analysis:
                 response_model=Analysis,
                 request_params=RequestParams(max_iterations=50),
             )
+            if isinstance(result, Exception):
+                raise result
             if result.notes:
                 mcp_app.logger.info(f"Debug notes: {result.notes}")
             return result
