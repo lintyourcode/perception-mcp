@@ -5,7 +5,7 @@ A lightweight **Model Context Protocol (MCP)** server that lets you ask **any qu
 ## Prerequisites
 
 - Python 3.11+
-- [Poetry](https://python-poetry.org/) ≥ 1.7
+- [uv](https://docs.astral.sh/uv/)
 - A [fal.ai](https://fal.ai/) account & API key
 - A [Perplexity](https://www.perplexity.ai/) account & API key
 
