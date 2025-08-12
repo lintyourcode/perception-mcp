@@ -7,7 +7,7 @@ mcp = FastMCP("Perception-MCP")
 
 @mcp.tool
 async def query_image(path: str, question: str) -> str:
-    """Answer a question about an image.
+    """Answer a question about an image's contents using state-of-the-art generative AI models.
 
     Args:
         path: Absolute local file path or URL pointing to an image.
@@ -22,7 +22,7 @@ async def query_image(path: str, question: str) -> str:
 
 @mcp.tool
 async def query_audio(path: str, question: str) -> str:
-    """Answer a question about an audio clip.
+    """Answer a question about an audio file's contents using state-of-the-art generative AI models.
 
     Args:
         path: Absolute local file path or URL pointing to an audio file.
@@ -38,7 +38,7 @@ async def query_audio(path: str, question: str) -> str:
 
 @mcp.tool
 async def query_video(path: str, question: str) -> str:
-    """Answer a question about a video.
+    """Answer a question about a video's contents using state-of-the-art generative AI models.
 
     Args:
         path: Absolute local file path or URL pointing to a video.
