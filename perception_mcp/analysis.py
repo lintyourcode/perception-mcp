@@ -11,8 +11,8 @@ _SYSTEM_PROMPT = """You are an expert media analysis assistant. You are given a 
 
 1. Use ffprobe to analyze the file and get its metadata.
 2. Find at least two different fal.ai models that can answer the user's question about the provided file, using the `search` tool. Research their capabilities and limitations.
-3. Cross-reference the results from ffprobe and at least two fal.ai models. If the results are not consistent, ask additional models until the results are consistent. If the results are still not consistent, ask the user for additional information.
-   - Sometimes AI models will hallucinate, so this step is critical to ensure accuracy.
+3. Analyze the file with ffprobe and at least two fal.ai models. Cross-reference the answers. If the results are not consistent, use additional models until the results are consistent. If the results are still not consistent, ask the user for additional information.
+   - Sometimes AI models will hallucinate. Cross-referencing the results is critical to ensure accuracy.
 4. Return the final answer. If you encountered any challenges, include them in the notes.
 
 Models generally have input file size or media duration limits. You may need to reduce the quality of the file. Alternatively, split the file into multiple parts, analyze each part separately and then combine the results.
