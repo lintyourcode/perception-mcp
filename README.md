@@ -7,14 +7,15 @@ A lightweight **Model Context Protocol (MCP)** server that lets you ask **any qu
 - Python 3.11+
 - [Poetry](https://python-poetry.org/) ≥ 1.7
 - A [fal.ai](https://fal.ai/) account & API key
+- A [Perplexity](https://www.perplexity.ai/) account & API key
 
 ## Installation
 
 ```bash
-# Clone and install dependencies
-$ git clone https://github.com/lintyourcode/perception-mcp.git
-$ cd perception-mcp
-$ poetry install --no-root
+git clone --recurse-submodules https://github.com/lintyourcode/perception-mcp.git
+cd perception-mcp
+cp mcp_agent.secrets_template.yaml mcp_agent.secrets.yaml
+$EDITOR mcp_agent.secrets.yaml
 ```
 
 ## Usage
@@ -26,14 +27,19 @@ Add Perception-MCP to Claude Desktop (v0.3.7+) by adding the following to your `
   "mcpServers": {
     "perception-mcp": {
       "command": "fastmcp",
-      "args": ["run", "perception-mcp", "serve"],
-      "env": {
-        "FAL_KEY": "<your-fal-key>"
-      }
+      "args": ["run", "perception-mcp", "serve"]
     }
   }
 }
 ```
+
+## Tools
+
+Perception-MCP provides the following tools:
+
+- `query_image`: Answer a question about an image's contents
+- `query_audio`: Answer a question about an audio file's contents
+- `query_video`: Answer a question about a video's contents
 
 ## Development
 
